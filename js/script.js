@@ -48,8 +48,15 @@ createApp({
 
     methods : {
         todo_done(index) {
-            console.log("clicked" + index);
-            this.todos[index].done = true;
+            // console.log("clicked" + index);
+            
+
+                // se è true, intelrineala -- OK
+            // this.todos[index].done = true;
+
+                // se è true, rimuovila -- OK
+            // this.todos.splice(index, 1);
+
         }
     }
 
