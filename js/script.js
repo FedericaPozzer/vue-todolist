@@ -43,20 +43,30 @@ createApp({
                 },
             ],
 
+            new_li : {
+                text : "",
+                done : false
+            }
+
         }
     },
 
     methods : {
         todo_done(index) {
             // console.log("clicked" + index);
-            
+
 
                 // se è true, intelrineala -- OK
-            // this.todos[index].done = true;
+            this.todos[index].done = true;
 
                 // se è true, rimuovila -- OK
             // this.todos.splice(index, 1);
 
+        },
+
+        add_li() {
+            console.log(this.new_li);
+            this.todos.push(this.new_li.text);
         }
     }
 
