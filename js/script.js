@@ -16,7 +16,36 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            message : "Hi Kik!",
+            todos : [
+                {
+                    text : "Pranzare",
+                    done : false,
+                },
+
+                {
+                    text: "Portare il cane a passeggio",
+                    done: false,
+                },
+
+                {
+                    text: "Chiamare l'elettricista",
+                    done: false,
+                },
+
+                {
+                    text: "Finire l'esercizio di oggi",
+                    done: false,
+                },
+
+                {
+                    text: "Andare a fare aperitivo",
+                    done: false,
+                },
+            ],
+
         }
-    }
+    },
+
+    
+
 }).mount("#my-app");
