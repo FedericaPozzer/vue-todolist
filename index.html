@@ -39,13 +39,13 @@
             <h1 class="mt-3">Vue JS Todo List</h1>
             <ul class="list-group list-group-numbered mt-4">
 
-                <li class="list-group-item d-flex align-items-center"  v-for="todo in todos">
+                <li class="list-group-item d-flex align-items-center"  v-for="(todo, index) in todos">
 
                     <span class="ms-1" v-if="!todo.done"> {{ todo.text }} </span>
                     <span class="ms-1" v-if="todo.done">
                         <s> {{ todo.text }} </s></span>
 
-                    <span class="ics ms-auto" v-on:click="todo_done()">X</span>
+                    <span class="ics ms-auto" v-on:click="todo_done(index)">X</span>
                 </li>
 
             </ul>

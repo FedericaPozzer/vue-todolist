@@ -46,6 +46,11 @@ createApp({
         }
     },
 
-    
+    methods : {
+        todo_done(index) {
+            console.log("clicked" + index);
+            this.todos[index].done = true;
+        }
+    }
 
 }).mount("#my-app");
