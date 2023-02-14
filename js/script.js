@@ -65,8 +65,25 @@ createApp({
         },
 
         add_li() {
-            console.log(this.new_li);
-            this.todos.push(this.new_li.text);
+            console.log(this.new_li); // vedi subito che è un proxy!
+            // this.todos.push(this.new_li); 
+
+            // funziona MA questo todo continua a rimanere in ascolto e quindi reattivo.. stupid proxy! QUINDI devo "scollegarli" per rendere il nuovo todo non-reattivo (non collegato al v-model). Scollego creandone una copia:
+                // const copy = {
+                //     text : this.new_li.text,
+                //     done : false,
+                // }
+                // this.todos.push(copy);
+
+            // OPPURE, la versione migliore:
+                const new_lalala = {
+                    ...this.new_li,
+                }
+                this.todos.push(new_lalala);
+
+            // svuoto la input bar quando invio un nuovo new_li :)
+            this.new_li.text = "";
+
         }
     }
 
